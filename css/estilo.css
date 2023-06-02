@@ -1,5 +1,5 @@
 html{
-    background-color: rgb(11, 0, 24);
+    background-color: #0b0018;
     color: aliceblue;
 }
 .titulo{
@@ -43,26 +43,185 @@ img{
     display: block;
 }
 .instalacion{
+    position: relative;
+    margin-bottom: 50px;
+    background: #0b0018;
     width: 90%;
-    height: auto;
+    height: 175px;
     transform: translateX(5%);
     -webkit-transform: translateX(5%);
     -moz-transform: translateX(5%);
     -ms-transform: translateX(5%);
     -o-transform: translateX(5%);
-    border: 3px solid blue;
     padding: 5px;
     padding-top: 20px;
-    border-radius: 0px 0px 10px 10px;
-    -webkit-border-radius: 0px 0px 10px 10px;
-    -moz-border-radius: 0px 0px 10px 10px;
-    -ms-border-radius: 0px 0px 10px 10px;
-    -o-border-radius: 0px 0px 10px 10px;
+    text-align: center;
+}
+
+.animacion::before, .animacion::after{
+    content:' ';
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    background: linear-gradient(120deg,#79fb00,#8d01a0,#031ba5,#ff004c,    #e6036d, #fb0094, #ff6600, #04c2e4, #adad02, #00c3ff);
+    background-size: 300%;
+    width: calc(100% + 16px);
+    height: calc(100% + 20px);
+    z-index: -1;
+    animation: BG 15s ease infinite;
+    -webkit-animation: BG 15s ease infinite;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.fondo{
+    padding-top: 20px;
+    background-color: #0b0018;
+    width: 100%;
+    height: calc(100% + 16px);
+    transform: translateY(-24px);
+    -webkit-transform: translateY(-24px);
+    -moz-transform: translateY(-24px);
+    -ms-transform: translateY(-24px);
+    -o-transform: translateY(-24px);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+@keyframes BG{
+    0%{
+        background-position: 0% 200%;
+    }
+    50%{
+        background-position: 200% 0%;
+    }
+    100%{
+        background-position: 0% 330%;
+    }
+}
+
+.animacion::after{
+    filter: brightness(1.4);
+    filter: drop-shadow(16px 16px 20px rgb(248,220,97));
+    filter: blur(15px);
+}
+
+.descargar{
+    padding: 20px;
+    position: relative;
+    letter-spacing: 2px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+    display: inline-block;
+}
+
+.descargar:hover{
+    background: #a945c7;
+    box-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7;
+    transition-delay: 1s;
+}
+
+.descargar:link{
+    color: #fff;
+}
+
+.descargar:visited{
+    color: fuchsia;
+}
+
+.descargar span{
+    position: absolute;
+    display: block;
+}
+
+#span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a945c7);
+}
+
+.descargar:hover #span1{
+    left: 100%;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+#span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #a945c7);
+}
+
+.descargar:hover #span3{
+    right: 100%;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition-delay: .5s;
+}
+
+#span2{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #a945c7);
+}
+
+.descargar:hover #span2{
+    top: 100%;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition-delay: .25s;
+}
+
+#span4{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #a945c7);
+}
+
+.descargar:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition-delay: .75s;
 }
 
 @media screen and (max-width:900px){
     img{
         width: 400px;
         height: 225px;
+    }
+    .fondo{
+        height: calc(100% + 30px);
     }
 }
