@@ -218,10 +218,13 @@ img{
 
 @media screen and (max-width:900px){
     img{
-        width: 400px;
-        height: 225px;
+        width: 200px;
+        height: 112.5px;
     }
     .fondo{
-        height: calc(100% + 30px);
+        height: calc(100% + 100px);
+    }
+    .animacion::before, .animacion::after{
+        height: calc(100% + 105px);
     }
 }
